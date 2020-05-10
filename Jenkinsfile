@@ -27,8 +27,8 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        bat "copy -i  C:/Program Files (x86)/Jenkins/workspace/FullyAutomated/webapp/target/*.war  tomcat@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
-                    }
+						bat "cp -i /home/jenkins/ **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
+                          }
                 }
 
                
